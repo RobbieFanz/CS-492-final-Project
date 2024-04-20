@@ -16,13 +16,16 @@ function MD5I(K,L,M){
 
 function MD5(input){
     var output = ""
-    for (var i = 0; i < input.length; i++) {
-        output += input[i].charCodeAt(0).toString(2) + " ";
-        
-        
+    for (var i = 0; i < input.length; i++) { // To binary
+        output += input[i].charCodeAt(0).toString(2) + " ";  
     }
-    if(output.length > 512){
-        Math.ceil(output.length)
-    }
+     output = output.match(/.{1,512}/g) // Into 512 bit chunks
+     
+     
+     
+     M = (output.match(/.{1,16}/g)) // 512 into 32 16 bit chunks
+         
+     
+
 
 }
