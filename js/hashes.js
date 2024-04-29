@@ -1,4 +1,4 @@
-function MD5(input){
+function MD5(input){ // Done by Richard
     var start = performance.now()
     var MD5 = new Hashes.MD5
     var output = MD5.hex(input)
@@ -7,7 +7,7 @@ function MD5(input){
     return output
 }
 
-function SHA1(input){
+function SHA1(input){ // Done by Richard
     var start = performance.now()
     var SHA1 = new Hashes.SHA1
     var output = SHA1.hex(input)
@@ -15,7 +15,7 @@ function SHA1(input){
     return output
 }
 
-function SHA256(input){
+function SHA256(input){ // Done by Richard
     var start = performance.now()
     var SHA256 = new Hashes.SHA256
     var output = SHA256.hex(input)
@@ -23,7 +23,7 @@ function SHA256(input){
     return output
 }
 
-function SHA512(input){
+function SHA512(input){ // Done by Richard
     var start = performance.now()
     var SHA512 = new Hashes.SHA512
     var output = SHA512.hex(input)
@@ -35,7 +35,7 @@ function SHA512(input){
 const submitButton = $('#submit')
 const avalancheButton = $('#avalanche')
 
-submitButton.click(function() {
+submitButton.click(function() { // Done by Robert
     input = $('#input').val();
     $('#MD5').text(`${MD5(input)}`);
     $('#SHA1').text(`${SHA1(input)}`);
@@ -45,7 +45,7 @@ submitButton.click(function() {
 
 });
 
-avalancheButton.click(function(){
+avalancheButton.click(function(){ // Done by Robert
     input = $('#input').val();
     $('#MD5').text(`${MD5(input)}\n${MD5(input+'1')}`);
     $('#SHA1').text(`${SHA1(input)}\n${SHA1(input+'1')}`);
