@@ -1,22 +1,22 @@
-function MD5(input){
+function MD5(input){ // Done by Richard
     let MD5 = new Hashes.MD5
     let output = MD5.hex(input)
     return output
 }
 
-function SHA1(input){
+function SHA1(input){ // Done by Richard
     let SHA1 = new Hashes.SHA1
     let output = SHA1.hex(input)
     return output
 }
 
-function SHA256(input){
+function SHA256(input){ // Done by Richard
     let SHA256 = new Hashes.SHA256
     let output = SHA256.hex(input)
     return output
 }
 
-function SHA512(input){
+function SHA512(input){ // Done by Richard
     let SHA512 = new Hashes.SHA512
     let output = SHA512.hex(input)
     return output
@@ -27,7 +27,7 @@ const submitButton = $('#submit')
 const avalancheButton = $('#avalanche')
 const time = $('#time')
 
-submitButton.click(function() {
+submitButton.click(function() { // Done by Robert
     input = $('#input').val();
     $('#MD5').text(`${MD5(input)}`);
     $('#SHA1').text(`${SHA1(input)}`);
@@ -37,7 +37,7 @@ submitButton.click(function() {
     
 });
 
-avalancheButton.click(function(){
+avalancheButton.click(function(){ // Done by Robert
     input = $('#input').val();
     $('#MD5').text(`${MD5(input)}\n${MD5(input+'1')}`);
     $('#SHA1').text(`${SHA1(input)}\n${SHA1(input+'1')}`);
@@ -46,7 +46,7 @@ avalancheButton.click(function(){
     
 });
 
-time.click(function(){
+time.click(function(){ // Done by Robert
     $('#time-md5').text(`time: ${testMd5()}ms`)
     $('#time-sha1').text(`time: ${testSha1()}ms`)
     $('#time-sha256').text(`time: ${testSha256()}ms`)
@@ -57,7 +57,7 @@ time.click(function(){
 
 let numOfHashes = 100000
 
-function testMd5(){
+function testMd5(){ // Done by Robert
     let start = performance.now()
     for(let i = 0; i<numOfHashes;i++){
         MD5(i)
@@ -66,7 +66,7 @@ function testMd5(){
     return end-start
 }
 
-function testSha1(){
+function testSha1(){ // Done by Robert
     let start = performance.now()
     for(let i = 0; i<numOfHashes;i++){
         SHA1(i)
@@ -75,7 +75,7 @@ function testSha1(){
     return end-start
 }
 
-function testSha256(){
+function testSha256(){ // Done by Robert
     let start = performance.now()
     for(let i = 0; i<numOfHashes;i++){
         SHA256(i)
@@ -84,7 +84,7 @@ function testSha256(){
     return end-start
 }
 
-function testSha512(){
+function testSha512(){ // Done by Robert
     let start = performance.now()
     for(let i = 0; i<numOfHashes;i++){
         SHA512(i)
